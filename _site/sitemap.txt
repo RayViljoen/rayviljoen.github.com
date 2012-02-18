@@ -7,4 +7,6 @@ http://rayviljoen.github.com/pages.html
 http://rayviljoen.github.com/sitemap.txt
 http://rayviljoen.github.com/tags.html
 
+http://rayviljoen.github.com/Lessons/my-second-test-post
 http://rayviljoen.github.com/Lessons/my-first-test-post
+http://rayviljoen.github.com/Lessons/another-test-post
