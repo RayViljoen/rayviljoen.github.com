@@ -68,4 +68,17 @@ body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
+
+/* ============== RAY VILJOEN ============== */
+
+.topbar h3 a, .topbar .fill{
+	background: url(/assets/h_bg.gif);
+}
+
+.topbar h3 a, .topbar .brand{
+	background: url(/assets/logo1.gif) no-repeat center center;
+	display: inline-block;
+	width: 200px;
+	height: 65px;
+}
 	
