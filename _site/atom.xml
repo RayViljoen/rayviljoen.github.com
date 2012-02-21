@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>RayViljoen</title>
+ <title>Ray<span>.</span>V</title>
  <link href="http://rayviljoen.github.com/atom.xml" rel="self"/>
  <link href="http://rayviljoen.github.com"/>
- <updated>2012-02-19T21:25:12+00:00</updated>
+ <updated>2012-02-21T14:09:06+00:00</updated>
  <id>http://rayviljoen.github.com</id>
  <author>
    <name>Ray Viljoen</name>

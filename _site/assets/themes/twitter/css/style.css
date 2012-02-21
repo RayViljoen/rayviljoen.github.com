@@ -76,9 +76,13 @@ body {
 }
 
 .topbar h3 a, .topbar .brand{
-	background: url(/assets/logo1.gif) no-repeat center center;
-	display: inline-block;
-	width: 200px;
-	height: 65px;
+	font-family: 'Lobster', cursive;
+	font-size: 3em;
+}
+
+.topbar h3 a, .topbar .brand span{
+	color: orange;
+	font-size: 1.8em;
+	line-height: 1px;
 }
 	
