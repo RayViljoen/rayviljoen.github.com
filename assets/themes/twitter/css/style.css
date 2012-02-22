@@ -113,14 +113,15 @@ html, body{
 .topbar input:focus,
 .topbar input{
 	float: right;
-	margin-top: 16px;
+	height: 15px;
+	margin-top: 18px;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	width: 180px;
 	border: none;
 	outline: none;
-	background: #fff url(/assets/mag.png) no-repeat 180px center;
+	background: #fff url(/assets/mag.png) no-repeat 183px center;
 	color: #404040;
 	text-shadow: none;
 	padding: 4px 15px;
