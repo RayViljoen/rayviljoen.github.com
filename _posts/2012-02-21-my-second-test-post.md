@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tag testing post"
+title: "Scaling Your JavaScript Applications (Videos And Slides) From Async"
 category: "Testing"
 tags: [testing]
 ---

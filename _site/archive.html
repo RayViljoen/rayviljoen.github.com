@@ -75,7 +75,10 @@
 
 
           </ul>
-          <input type="text" name="search" val="" />
+            <div id="search">
+                <input type="text" name="postfilter" val="" />
+                <ul></ul>
+            </div>
         </div>
       </div>
     </div>
@@ -102,7 +105,7 @@
       <ul>
     
   
-    <li><span>February 21, 2012</span> &raquo; <a href="/Testing/my-second-test-post">Tag testing post</a></li>
+    <li><span>February 21, 2012</span> &raquo; <a href="/Testing/my-second-test-post">Scaling Your JavaScript Applications (Videos And Slides) From Async</a></li>
   
     
           
@@ -166,8 +169,106 @@
       </footer>
 
     </div> <!-- /container -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" >
+
+        // Parse search results after render
+        $(window).load(function(){
+
+            "use strict";
+
+            console.log('loaded');
+
+            // Create array containing post data for search function
+            var searchDB = {
+
+                // --------------------------------liquid-------------------------------------
+                
+                  'Scaling Your JavaScript Applications (Videos And Slides) From Async' : {
+
+                    url: '/Testing/my-second-test-post',
+
+                    // Add all possible post info to string for searching
+                    content: 'Title: Scaling Your JavaScript Applications (Videos And Slides) From Async | Category: Testing | Tags: testing | Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus.Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.Etiam enim nunc, suscipit sit amet molestie et, lacinia et quam. Nam ac iaculis erat. Suspendisse dui nisi, tincidunt vitae venenatis a, mattis vitae nisl. Fusce urna augue, venenatis id lobortis nec, commodo et mi. Fusce eget enim turpis. Sed cursus justo dictum lectus feugiat ultricies pellentesque ante molestie. Nunc et orci arcu, vel mattis ante.Donec placerat mattis tempor. Suspendisse quis sapien eu est elementum aliquam eu ac enim. Quisque a semper libero. Sed euismod felis id diam tincidunt rhoncus. Nam luctus leo eget massa auctor dapibus. Curabitur dapibus rhoncus metus, sit amet ornare justo pulvinar non. Sed sit amet leo vitae mi pulvinar sagittis quis in nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum interdum adipiscing. In hac habitasse platea dictumst. Nulla vel diam urna.',
+                  },
+                
+                  'My Second Test Post' : {
+
+                    url: '/Lessons/my-second-test-post',
+
+                    // Add all possible post info to string for searching
+                    content: 'Title: My Second Test Post | Category: Lessons | Tags: sample | Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus. Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.Etiam enim nunc, suscipit sit amet molestie et, lacinia et quam. Nam ac iaculis erat. Suspendisse dui nisi, tincidunt vitae venenatis a, mattis vitae nisl. Fusce urna augue, venenatis id lobortis nec, commodo et mi. Fusce eget enim turpis. Sed cursus justo dictum lectus feugiat ultricies pellentesque ante molestie. Nunc et orci arcu, vel mattis ante.Donec placerat mattis tempor. Suspendisse quis sapien eu est elementum aliquam eu ac enim. Quisque a semper libero. Sed euismod felis id diam tincidunt rhoncus. Nam luctus leo eget massa auctor dapibus. Curabitur dapibus rhoncus metus, sit amet ornare justo pulvinar non. Sed sit amet leo vitae mi pulvinar sagittis quis in nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum interdum adipiscing. In hac habitasse platea dictumst. Nulla vel diam urna.',
+                  },
+                
+                  'My First Test Post' : {
+
+                    url: '/Lessons/my-first-test-post',
+
+                    // Add all possible post info to string for searching
+                    content: 'Title: My First Test Post | Category: Lessons | Tags: sampletest | Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus. Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.Etiam enim nunc, suscipit sit amet molestie et, lacinia et quam. Nam ac iaculis erat. Suspendisse dui nisi, tincidunt vitae venenatis a, mattis vitae nisl. Fusce urna augue, venenatis id lobortis nec, commodo et mi. Fusce eget enim turpis. Sed cursus justo dictum lectus feugiat ultricies pellentesque ante molestie. Nunc et orci arcu, vel mattis ante.Donec placerat mattis tempor. Suspendisse quis sapien eu est elementum aliquam eu ac enim. Quisque a semper libero. Sed euismod felis id diam tincidunt rhoncus. Nam luctus leo eget massa auctor dapibus. Curabitur dapibus rhoncus metus, sit amet ornare justo pulvinar non. Sed sit amet leo vitae mi pulvinar sagittis quis in nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum interdum adipiscing. In hac habitasse platea dictumst. Nulla vel diam urna.',
+                  },
+                
+                  'Another Test Post' : {
+
+                    url: '/Lessons/another-test-post',
+
+                    // Add all possible post info to string for searching
+                    content: 'Title: Another Test Post | Category: Lessons | Tags: sample | Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus. Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.Etiam enim nunc, suscipit sit amet molestie et, lacinia et quam. Nam ac iaculis erat. Suspendisse dui nisi, tincidunt vitae venenatis a, mattis vitae nisl. Fusce urna augue, venenatis id lobortis nec, commodo et mi. Fusce eget enim turpis. Sed cursus justo dictum lectus feugiat ultricies pellentesque ante molestie. Nunc et orci arcu, vel mattis ante.Donec placerat mattis tempor. Suspendisse quis sapien eu est elementum aliquam eu ac enim. Quisque a semper libero. Sed euismod felis id diam tincidunt rhoncus. Nam luctus leo eget massa auctor dapibus. Curabitur dapibus rhoncus metus, sit amet ornare justo pulvinar non. Sed sit amet leo vitae mi pulvinar sagittis quis in nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum interdum adipiscing. In hac habitasse platea dictumst. Nulla vel diam urna.',
+                  },
+                
+                // --------------------------------liquid-------------------------------------
+
+            };
+
+            // Search Events
+            $('#search input').on({
+
+                // User types into search input
+                keyup: function(){
+              
+                    var searchValue, searchRegex, resultContainer;
+
+                    // Empty search every time
+                    $('#search ul li').empty();
+                    
+                    // Dynamic Result Container
+                    resultContainer = $('#search ul');
+
+                    // Search value & regex
+                    searchValue = $(this).val();
+                    searchRegex = new RegExp(searchValue, 'gi');
+
+                    // Perform regex if search is not blank
+                    if(searchValue){
+
+                        // Itterate posts and match search term
+                        $.each(searchDB, function(k,v){
+
+                            // Add post link to dropdown in case of match
+                            if(v.content.match(searchRegex)){
+                                resultContainer.prepend('<li><a href="' + v.url + '">' + k + '</a></li>');
+                            }
+                        });
+                    }
+                },
+
+                // Show results on focus
+                focus: function(){
+                    $('#search ul').fadeIn(200);
+                },
+
+                // Hide on blur
+                blur: function(){
+                    $('#search ul').fadeOut(200);
+                }
+            });
+
+        });
+
+    </script>
 
     
+
   </body>
 </html>
 

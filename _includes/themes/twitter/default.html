@@ -38,7 +38,10 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
-          <input type="text" name="search" val="" />
+            <div id="search">
+                <input type="text" name="postfilter" val="" />
+                <ul></ul>
+            </div>
         </div>
       </div>
     </div>
@@ -57,7 +60,81 @@
       </footer>
 
     </div> <!-- /container -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" >
+
+        // Parse search results after render
+        $(window).load(function(){
+
+            "use strict";
+
+            console.log('loaded');
+
+            // Create array containing post data for search function
+            var searchDB = {
+
+                // --------------------------------liquid-------------------------------------
+                {% for post in site.posts %}
+                  '{{ post.title }}' : {
+
+                    url: '{{ post.url }}',
+
+                    // Add all possible post info to string for searching
+                    content: 'Title: {{ post.title }} | Category: {{ post.category }} | Tags: {{ post.tags }} | Content: {{ post.content | strip_html | strip_newlines }}',
+                  },
+                {% endfor %}
+                // --------------------------------liquid-------------------------------------
+
+            };
+
+            // Search Events
+            $('#search input').on({
+
+                // User types into search input
+                keyup: function(){
+              
+                    var searchValue, searchRegex, resultContainer;
+
+                    // Empty search every time
+                    $('#search ul li').empty();
+                    
+                    // Dynamic Result Container
+                    resultContainer = $('#search ul');
+
+                    // Search value & regex
+                    searchValue = $(this).val();
+                    searchRegex = new RegExp(searchValue, 'gi');
+
+                    // Perform regex if search is not blank
+                    if(searchValue){
+
+                        // Itterate posts and match search term
+                        $.each(searchDB, function(k,v){
+
+                            // Add post link to dropdown in case of match
+                            if(v.content.match(searchRegex)){
+                                resultContainer.prepend('<li><a href="' + v.url + '">' + k + '</a></li>');
+                            }
+                        });
+                    }
+                },
+
+                // Show results on focus
+                focus: function(){
+                    $('#search ul').fadeIn(200);
+                },
+
+                // Hide on blur
+                blur: function(){
+                    $('#search ul').fadeOut(200);
+                }
+            });
+
+        });
+
+    </script>
 
     {% include JB/analytics %}
+
   </body>
 </html>

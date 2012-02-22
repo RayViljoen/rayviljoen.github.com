@@ -109,10 +109,16 @@ html, body{
 	color: #fff;
 }
 
-.topbar input:hover,
-.topbar input:focus,
-.topbar input{
+
+.topbar #search{
 	float: right;
+	overflow: visible;
+	position: relative;
+}
+
+.topbar #search input:hover,
+.topbar #search input:focus,
+.topbar #search input{
 	height: 15px;
 	margin-top: 18px;
 	-webkit-border-radius: 15px;
@@ -121,10 +127,23 @@ html, body{
 	width: 180px;
 	border: none;
 	outline: none;
-	background: #fff url(/assets/mag.png) no-repeat 183px center;
+	background: #fff url(/assets/images/mag.png) no-repeat 183px center;
 	color: #404040;
 	text-shadow: none;
 	padding: 4px 15px;
+}
+
+.topbar #search ul{
+	position: absolute;
+	background: #222;
+	width: 190px;
+	margin: 0;
+	padding: 0;
+	left: 10px;
+	top: 50px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .page-header{
