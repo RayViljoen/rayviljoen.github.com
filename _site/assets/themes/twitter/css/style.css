@@ -71,22 +71,32 @@ body {
 
 /* ============== RAY VILJOEN ============== */
 
+html, body{
+	background: #fff;
+}
+
+.content{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 .topbar h3 a, .topbar{
 	height: 60px;
 }
 
 .topbar h3 a, .topbar .fill{
-	background: url(/assets/h_bg.gif);
+	background: #222;
 }
 
 .topbar h3 a, .topbar .brand{
 	font-family: 'Lobster', cursive;
 	font-size: 3em;
-	margin-right: 20px;
+	margin-right: 50px;
 }
 
 .topbar h3 a, .topbar .brand span{
-	color: orange;
+	color: #ff6600;
 	font-size: 1.8em;
 	line-height: 0px;
 	position: relative;
@@ -95,6 +105,25 @@ body {
 
 .topbar div .nav li a{
 	padding: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.topbar input:hover,
+.topbar input:focus,
+.topbar input{
+	float: right;
+	margin-top: 16px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	width: 180px;
+	border: none;
+	outline: none;
+	background: #fff url(/assets/mag.png) no-repeat 180px center;
+	color: #404040;
+	text-shadow: none;
+	padding: 4px 15px;
 }
 
 .page-header{
@@ -105,5 +134,23 @@ body {
 .page-header h1{
 	font-family: 'Lobster', cursive;
 	margin: 0;
+}
+
+.container .content article div{
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+.container .content article h2 a{
+	color: #0185e2;
+}
+
+.container .content article h2 a:hover{
+	color: #0096ff;
+	text-decoration: none;
 }
 	

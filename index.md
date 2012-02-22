@@ -6,10 +6,12 @@ title: Site Sub Here
 
 
 {% for post in site.posts limit:5 %}
+
+<article>  
   <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
   <p class="postmeta">{{ post.date | date_to_string }}</p>
   
-  {{ post.content | split: '<!-- more -->' | first }}
-
+  <div> {{ post.content | split: '<!-- more -->' | first }} </div>
+</article>
 
 {% endfor %}
