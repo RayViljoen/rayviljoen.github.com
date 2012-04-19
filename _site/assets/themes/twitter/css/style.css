@@ -9,7 +9,7 @@ body {
   text-align: center; /* center align it with the container */
 }
 .container {
-  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+  width: 800px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
 /* The white background content wrapper */
@@ -75,10 +75,16 @@ html, body{
 	background: #fff;
 }
 
+p{
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
 .content{
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+	padding: 0px;
 }
 
 .topbar h3 a, .topbar{
@@ -109,43 +115,6 @@ html, body{
 	color: #fff;
 }
 
-
-.topbar #search{
-	float: right;
-	overflow: visible;
-	position: relative;
-}
-
-.topbar #search input:hover,
-.topbar #search input:focus,
-.topbar #search input{
-	height: 15px;
-	margin-top: 18px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	width: 180px;
-	border: none;
-	outline: none;
-	background: #fff url(/assets/images/mag.png) no-repeat 183px center;
-	color: #404040;
-	text-shadow: none;
-	padding: 4px 15px;
-}
-
-.topbar #search ul{
-	position: absolute;
-	background: #222;
-	width: 190px;
-	margin: 0;
-	padding: 0;
-	left: 10px;
-	top: 50px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
 .page-header{
 	padding: 0 0 15px;
 	margin: 0;
@@ -156,15 +125,7 @@ html, body{
 	margin: 0;
 }
 
-.container .content article div{
-	-moz-column-count: 2;
-	-moz-column-gap: 20px;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 20px;
-	column-count: 2;
-	column-gap: 20px;
-}
-
+.container .content h1,
 .container .content article h2 a{
 	color: #0185e2;
 }
@@ -173,4 +134,53 @@ html, body{
 	color: #0096ff;
 	text-decoration: none;
 }
-	
+
+.container .content article{
+	padding: 10px 15px;
+	margin: 10px 0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F7F7F7;
+	border: 1px solid #F0F0F0;
+}
+
+.container .content article img.align_left{
+	float: left;
+	margin:10px 20px 10px 0px;
+}
+
+.container .content article img.align_right{
+	float: right;
+	margin:10px 0px 10px 20px;
+}
+
+.container .content img.align_left{
+	float: left;
+	margin:10px 20px 10px 0px;
+}
+
+.container .content img.align_right{
+	float: right;
+	margin:10px 0px 10px 20px;
+}
+
+.container .content .post-header{
+	margin-top: 20px;
+}
+
+.content .sidebar{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F7F7F7;
+	border: 1px solid #F0F0F0;
+	width: 190px;
+	padding: 0px 15px;
+}
+
+.container .content .postmeta{
+	font-weight:bold;
+	color: #444;
+	margin-bottom: 15px;
+}

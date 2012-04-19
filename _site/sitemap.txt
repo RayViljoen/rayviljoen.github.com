@@ -3,7 +3,6 @@ http://rayviljoen.github.com/archive.html
 http://rayviljoen.github.com/atom.xml
 http://rayviljoen.github.com/categories.html
 http://rayviljoen.github.com/index.html
-http://rayviljoen.github.com/pages.html
 http://rayviljoen.github.com/sitemap.txt
 http://rayviljoen.github.com/tags.html
 
