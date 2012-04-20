@@ -2,7 +2,6 @@
 layout: post
 title: "My Second Test Post"
 category: "Lessons"
-tags: [sample]
 ---
 {% include JB/setup %}
 
