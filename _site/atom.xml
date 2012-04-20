@@ -4,7 +4,7 @@
  <title>Ray<span>.</span>V</title>
  <link href="http://rayviljoen.github.com/atom.xml" rel="self"/>
  <link href="http://rayviljoen.github.com"/>
- <updated>2012-04-20T07:30:21+01:00</updated>
+ <updated>2012-04-20T07:31:32+01:00</updated>
  <id>http://rayviljoen.github.com</id>
  <author>
    <name>Ray Viljoen</name>
@@ -17,7 +17,8 @@
    <link href="http://rayviljoen.github.com/Testing/my-second-test-post"/>
    <updated>2012-02-21T00:00:00+00:00</updated>
    <id>hhttp://rayviljoen.github.com/Testing/my-second-test-post</id>
-   <content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero.&lt;img class='align_left' src='http://placehold.it/350x180' /&gt; Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus.&lt;/p&gt;
+   <content type="html">&lt;img class='align_left' src='http://placehold.it/350x180' /&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus.&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.&lt;/p&gt;
 
