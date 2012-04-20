@@ -5,8 +5,6 @@ category: "Testing"
 ---
 {% include JB/setup %}
 
-<!-- <img src="http://placehold.it/350x180" class="align_left"> -->
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus.
 
 <!-- more -->
