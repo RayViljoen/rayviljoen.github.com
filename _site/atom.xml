@@ -4,7 +4,7 @@
  <title>Ray<span>.</span>V</title>
  <link href="http://rayviljoen.github.com/atom.xml" rel="self"/>
  <link href="http://rayviljoen.github.com"/>
- <updated>2012-04-20T07:31:32+01:00</updated>
+ <updated>2012-04-23T23:53:40+01:00</updated>
  <id>http://rayviljoen.github.com</id>
  <author>
    <name>Ray Viljoen</name>
@@ -19,9 +19,9 @@
    <id>hhttp://rayviljoen.github.com/Testing/my-second-test-post</id>
    <content type="html">&lt;img class='align_left' src='http://placehold.it/350x180' /&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet tellus et felis malesuada pellentesque. Sed vitae sapien non est facilisis molestie vitae at libero. Duis pulvinar velit ac quam interdum rhoncus. Curabitur a scelerisque massa. Nulla vitae feugiat tortor. Sed purus dolor, porttitor in blandit accumsan, malesuada vulputate purus. Duis mollis elit in arcu dignissim dapibus.&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;p&gt;Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.&lt;/p&gt;
 
+&lt;p&gt;Cras orci metus, sagittis aliquam semper et, posuere tempor nisi. Ut ac pellentesque ipsum. Nullam magna neque, ornare non viverra a, dictum vitae mauris. Curabitur rutrum semper viverra. Cras eget hendrerit lectus.&lt;/p&gt;
+&lt;!-- more --&gt;
 &lt;p&gt;Etiam enim nunc, suscipit sit amet molestie et, lacinia et quam. Nam ac iaculis erat. Suspendisse dui nisi, tincidunt vitae venenatis a, mattis vitae nisl. Fusce urna augue, venenatis id lobortis nec, commodo et mi. Fusce eget enim turpis. Sed cursus justo dictum lectus feugiat ultricies pellentesque ante molestie. Nunc et orci arcu, vel mattis ante.&lt;/p&gt;
 
 &lt;p&gt;Donec placerat mattis tempor. Suspendisse quis sapien eu est elementum aliquam eu ac enim. Quisque a semper libero. Sed euismod felis id diam tincidunt rhoncus. Nam luctus leo eget massa auctor dapibus. Curabitur dapibus rhoncus metus, sit amet ornare justo pulvinar non. Sed sit amet leo vitae mi pulvinar sagittis quis in nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum interdum adipiscing. In hac habitasse platea dictumst. Nulla vel diam urna.&lt;/p&gt;</content>
