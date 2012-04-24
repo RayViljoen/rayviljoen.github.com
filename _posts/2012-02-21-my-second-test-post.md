@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scaling Your JavaScript Applications (Videos And Slides) From Async"
-category: "Testing"
+categories: ["Testing", "Lessons"]
 ---
 {% include JB/setup %}
 

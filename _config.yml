@@ -1,6 +1,6 @@
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:title 
+permalink: /:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
@@ -85,7 +85,7 @@ JB :
       appid : 208342682596454
       num_posts: 10
       width: 580
-      colorscheme: light
+      colorscheme: dark
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.

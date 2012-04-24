@@ -5,7 +5,6 @@ http://rayviljoen.github.com/categories.html
 http://rayviljoen.github.com/index.html
 http://rayviljoen.github.com/sitemap.txt
 
-http://rayviljoen.github.com/Testing/my-second-test-post
-http://rayviljoen.github.com/Lessons/my-second-test-post
-http://rayviljoen.github.com/Lessons/my-first-test-post
-http://rayviljoen.github.com/Lessons/another-test-post
+http://rayviljoen.github.com/my-second-test-post
+http://rayviljoen.github.com/my-first-test-post
+http://rayviljoen.github.com/another-test-post
