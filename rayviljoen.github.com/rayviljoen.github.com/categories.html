@@ -3,15 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive</title>
+    <title>Categories</title>
     
     <meta name="author" content="Ray Viljoen">
-    <meta name="description" content="Web & mobile development blog covering Javascript, PHP, MySQL, HTML5, Objective-C and more.">
-    <meta name="keywords" content="iOS, Development, Web, Javascript, PHP, MySQL, Ray Viljoen, Objective-C, Programming, Xcode, Node.js, Coding, rayviljoen.github.com.">
-
-    <meta property="og:site_name" content="rayviljoen.github.com">
-    <meta property="og:url" content="http://rayviljoen.github.com/">
-    <meta property="og:type" content="blog">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -31,7 +25,6 @@
     <div id="topbar">
       <div class="container">
         <a id="logo" href="/">Ray<span>.</span>V</a>
-       
         <ul id="nav">
           
           
@@ -41,7 +34,7 @@
   
     
     	
-    	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+    	<li><a href="/archive.html">Archive</a></li>
     	
     
   
@@ -49,7 +42,7 @@
   
     
     	
-    	<li><a href="/categories.html">Categories</a></li>
+    	<li class="active"><a href="/categories.html" class="active">Categories</a></li>
     	
     
   
@@ -60,8 +53,6 @@
 
 
 
-          <li><a href="https://github.com/RayViljoen" >Github</a></li>
-          <li><a href="http://zerply.com/RayViljoen/public" >Contact</a></li>
         </ul>
       </div>
     </div>
@@ -72,65 +63,83 @@
         
 
 
-
-
+<ul class="tag_box inline">
+  
+  
 
 
   
-    
-    
-    
+     
+    	<li><a href="/categories.html#Testing-ref">
+    		Testing <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Lessons-ref">
+    		Lessons <span>3</span>
+    	</a></li>
     
   
-    
-      <h2>2012</h2>
-      <h3>February</h3>
-      <ul>
-    
-  
-    <li><span>February 21, 2012</span> &raquo; <a href="/my-second-test-post">Scaling Your JavaScript Applications (Videos And Slides) From Async</a></li>
-  
-    
-          
-        
+
+
+</ul>
+
+
+ 
+  <h2 id="Testing-ref">Testing</h2>
+  <ul>
       
     
+
+
   
     
-    
-    
+    	
+    	<li><a href="/my-second-test-post">Scaling Your JavaScript Applications (Videos And Slides) From Async</a></li>
+    	
     
   
-    
-  
-    <li><span>February 10, 2012</span> &raquo; <a href="/my-first-test-post">My First Test Post</a></li>
-  
-    
-          
-        
+
+
+
+  </ul>
+ 
+  <h2 id="Lessons-ref">Lessons</h2>
+  <ul>
       
     
+
+
   
     
+    	
+    	<li><a href="/my-second-test-post">Scaling Your JavaScript Applications (Videos And Slides) From Async</a></li>
+    	
     
+  
     
+    	
+    	<li><a href="/my-first-test-post">My First Test Post</a></li>
+    	
     
   
     
-  
-    <li><span>February  1, 2012</span> &raquo; <a href="/another-test-post">Another Test Post</a></li>
-  
-    
-      </ul>
+    	
+    	<li><a href="/another-test-post">Another Test Post</a></li>
+    	
     
   
+
+
+
+  </ul>
+
 
 
 
       </div>
 
       <footer>
-        <p><a href="http://zerply.com/RayViljoen/public">Ray Viljoen</a> &copy; 2012 
+        <p>&copy; Ray Viljoen 2012 
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
         </p>
       </footer>
@@ -143,6 +152,8 @@
         $(window).load(function(){
 
             "use strict";
+
+            
 
             /*
             // Create array containing post data

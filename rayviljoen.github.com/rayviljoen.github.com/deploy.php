@@ -58,8 +58,7 @@ shell_exec("cp -r {$jekyllSiteDir} {$blogDir}");
 
 // Commit and push new blog
 
-@$now = date('j F @ H:i:s');
-
+@$now = date('j F @ H:i');
 echo shell_exec("cd {$blogDir} && git add -A && git commit -m 'Auto push: {$now}' && git push origin master");
 
 echo "Complete.\n";
