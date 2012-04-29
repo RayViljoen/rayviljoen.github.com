@@ -1,8 +1,10 @@
----
-# Remember to set production_url in your _config.yml file!
-title : Sitemap
----
-{% for page in site.pages %}
-{{site.production_url}}{{ page.url }}{% endfor %}
-{% for post in site.posts %}
-{{site.production_url}}{{ post.url }}{% endfor %}
+
+http://rayviljoen.github.com/archive.html
+http://rayviljoen.github.com/atom.xml
+http://rayviljoen.github.com/categories.html
+http://rayviljoen.github.com/index.html
+http://rayviljoen.github.com/sitemap.txt
+
+http://rayviljoen.github.com/my-second-test-post
+http://rayviljoen.github.com/my-first-test-post
+http://rayviljoen.github.com/another-test-post
