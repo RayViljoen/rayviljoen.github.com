@@ -144,16 +144,6 @@ p{
 	margin-top: 20px;
 }
 
-.content .sidebar{
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	background-color: #F7F7F7;
-	border: 1px solid #F0F0F0;
-	width: 190px;
-	padding: 0px 15px;
-}
-
 .container .content .postmeta{
 	color: #aaa;
 	margin: 0px;
