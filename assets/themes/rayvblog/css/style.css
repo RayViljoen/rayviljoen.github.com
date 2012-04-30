@@ -16,7 +16,7 @@ html, body {
   padding: 0px;
 }
 body {
-  padding-top: 60px;
+  padding-top: 75px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -29,8 +29,8 @@ a:visited{
 
 .container footer p {
   text-align: center;
-  font-weight: bold;
-  font-size: 0.8em;
+  font-weight: 300;
+  font-size: 1.2em;
 }
 
 .container footer p a{
@@ -44,12 +44,22 @@ a:visited{
 
 #topbar{
 	height: 60px;
-	background-color: #222;
+	background: #2C2C2C;
 	position: fixed;
 	top: 0px;
 	width: 100%;
 	border-bottom: 5px solid #f60;
 	overflow: hidden;
+    -webkit-box-shadow:  0px 1px 5px 0px #aaa;
+    box-shadow:  0px 1px 5px 0px #aaa;
+	background: #333;
+	background: -moz-linear-gradient(top,  #333 0%, #111 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333), color-stop(100%,#111));
+	background: -webkit-linear-gradient(top,  #333 0%,#111 100%);
+	background: -o-linear-gradient(top,  #333 0%,#111 100%);
+	background: -ms-linear-gradient(top,  #333 0%,#111 100%);
+	background: linear-gradient(top,  #333 0%,#111 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333', endColorstr='#111',GradientType=0 );
 }
 
 p{
@@ -65,6 +75,7 @@ p{
 	float: left;
 	line-height: 1.4em;
 	height: 60px;
+	text-shadow: -1px -1px 1px #000;
 }
 
 #logo span{
@@ -75,21 +86,22 @@ p{
 	color: #f60;
 }
 
-#logo:hover{
-	background-color:#333;
-}
-
 #nav{
 	margin: 0px;
 	padding: 0px;
 	float: right;
-	padding: 0px 50px 0px 0px;
+	padding: 0px;
+	margin-right: 50px;
+	border-left: 1px solid #111;
+	
 }
 
 #nav li{
 	float: left;
 	overflow: hidden;
 	list-style: none;
+	border-right: 1px solid #111;
+	border-left: 1px solid #333;
 }
 
 #nav li a{
@@ -97,19 +109,31 @@ p{
 	display: inline-block;
 	color: #ccc;
 	font-size: 0.9em;
+	text-shadow: -1px -1px 1px #000;
 }
 
 #nav li a:hover{
 	color: #fff;
-	background-color: #333;
+	background: #111;
+}
+
+#nav #feed{
+	border-right: none;
+}
+
+#nav #feed a{
+	height: 60px;
+	width: 60px;
+	padding: 0px;
+	display: inline-block;
+	background: url(../images/rss.png) no-repeat center center;
 }
 
 .container .content h1,
 .container .content article h2{
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-weight:400;
+	font-weight:300;
 	color: #444;
-	font-size: 2em;
+	font-size: 1.9em;
 	margin: 0px;
 	padding: 25px 0px 5px;
 }
@@ -145,7 +169,7 @@ p{
 }
 
 .container .content .postmeta{
-	color: #aaa;
+	color: #999;
 	margin: 0px;
 	padding: 7px 0px 5px;
 }
@@ -153,6 +177,7 @@ p{
 .container .content .postmeta span{
 	background: url(../images/meta.gif) no-repeat 0 0;
 	padding: 5px 0px 5px 30px;
+	font-weight: 300;
 }
 
 .container .content .postmeta span.published{
@@ -170,5 +195,5 @@ p{
 }
 
 .container .content .postmeta span a:hover{
-	color: #f60;
+	color: #444;
 }
