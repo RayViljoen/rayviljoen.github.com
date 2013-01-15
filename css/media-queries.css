@@ -1,0 +1,89 @@
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (max-width: 1025px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  background-image: url('./images/sidebar-vert.png');
+  background-size: 45px 240px;
+}
+@media only screen and (max-width: 1025px) {
+  #wrapper {
+    padding-left: 0;
+    background-image: url('./images/sidebar-vert.png');
+    background-size: 45px 240px;
+    background-repeat: repeat-x;
+    background-position: 0 -145px;
+  }
+  #archiveWrap {
+    background-color: #FFF;
+    margin: 15px auto;
+  }
+  #dash {
+    position: static;
+    display: block;
+    width: auto;
+    background: none;
+    height: 70px;
+    padding-top: 10px;
+    max-width: 845px;
+    margin: 0 auto;
+  }
+  #dash h1 {
+    float: left;
+    border: none;
+  }
+  #dash #social {
+    border: none;
+    float: right;
+    padding: 13px 0 0 30px;
+  }
+  #dash #social li {
+    float: left;
+    padding-right: 20px;
+  }
+  #dash #menu {
+    display: none;
+  }
+  #dash #archive {
+    display: none;
+  }
+  #content {
+    width: 100%;
+  }
+  article {
+    margin: 15px auto;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #wrapper {
+    background-position: 0px -120px;
+    min-width: 450px;
+  }
+  #dash {
+    height: 100px;
+  }
+  #dash h1,
+  #dash #social {
+    float: none;
+    display: block;
+  }
+  #dash h1 {
+    text-align: center;
+    padding-bottom: 0;
+  }
+  #dash #social {
+    margin: 0 auto;
+    width: 240px;
+    padding: 0px;
+  }
+  #dash #social li {
+    background: none;
+    padding: 0px 20px;
+    text-align: center;
+  }
+  #dash #social li.github {
+    border-right: 1px solid #FFF;
+  }
+  #dash #social li.feed {
+    border-right: 1px solid #FFF;
+  }
+}

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RViljoen</title>
+    <atom:link href="http://rayviljoen.github.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://rayviljoen.github.com</link>
+    <description></description>
+    <pubDate>Wed, 25 May 2011 12:00:00 +0100</pubDate>
+    <generator>The mighty Wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>Running tests with Mocha's JS API</title>
+      <link>http://rayviljoen.github.com/articles/mocha-js-api/</link>
+      <pubDate>Wed, 25 May 2011 12:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://rayviljoen.github.com/articles/mocha-js-api/</guid>
+      <description>&lt;p&gt;The &lt;a href=&quot;http://visionmedia.github.com/mocha/&quot;&gt;Mocha&lt;/a&gt; testing framework has quickly become a favourite amongst Node developers and now, with the release of v1.0, includes a very useful JavaScript API for running tests from within you code.
+
+&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Running tests from within &lt;em&gt;server.js&lt;/em&gt;, or equivalent, removes the need for writing these commands into a separate shell script and allows you to respond to the outcome of the tests in a much more convenient way.
+
+&lt;/p&gt;
+&lt;p&gt;Documentation for the new API is yet to be completed, although most options are very similar to the cli.
+
+
+&lt;/p&gt;
+&lt;p&gt;To get started, first create a new instance of Mocha and then include the testing library of your choice.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    var mocha = new (require(&apos;mocha&apos;))();
+    var should = require(&apos;should&apos;);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, set some basic configuration options and include the test files.
+Unlike the cli, which has the &lt;strong&gt;&lt;em&gt;--recursive&lt;/em&gt;&lt;/strong&gt; flag for stepping through a directory, individual test files has to be added to the &lt;strong&gt;&lt;em&gt;mocha.files&lt;/em&gt;&lt;/strong&gt; array.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    var testFiles = [ &apos;./tests/test1.js&apos;, &apos;./tests/test2.js&apos; ];
+    mocha.files = files;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mocha also provides a helper method for adding test files individually.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    mocha.addFile(&apos;./tests/test1.js&apos;);
+    mocha.addFile(&apos;./tests/test2.js&apos;);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some of the other useful options include allowed globals &amp; of course the reporter.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    mocha.reporter(&apos;spec&apos;);
+    mocha.options.globals = [&apos;someGlobal&apos;, &apos;anotherGlobal&apos;];
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally call &lt;strong&gt;&lt;em&gt;run&lt;/em&gt;&lt;/strong&gt;, which provides a &lt;strong&gt;&lt;em&gt;done&lt;/em&gt;&lt;/strong&gt; callback, and handle the &lt;strong&gt;&lt;em&gt;pass&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;fail&lt;/em&gt;&lt;/strong&gt; event for each test on the object returned from the &lt;strong&gt;&lt;em&gt;run&lt;/em&gt;&lt;/strong&gt; method.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    var tests = mocha.run(function() {
+        console.log(&apos;All tests are done&apos;);
+    });
+
+    tests.on(&apos;pass&apos;, function(test) {
+        console.log(&apos;Passed:&apos; + test.title);
+    });
+
+    tests.on(&apos;fail&apos;, function(test) {
+        console.log(&apos;Failed&apos; + test.title);
+    });
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here&apos;s a complete example of implementing this in a project and automatically running the tests when in dev mode.
+Using a &lt;a href=&quot;https://npmjs.org/package/glob&quot;&gt;glob helper&lt;/a&gt; simplifies adding test files and allows you to easily use a multi level directory for your test files.
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+
+    // Check node is running in dev mode
+    if(NODE_ENV === &apos;development&apos;) {
+
+        var mocha = new (require(&apos;mocha&apos;))();
+        var should = require(&apos;should&apos;);
+        var tests;
+
+        // Set reporter
+        mocha.reporter(&apos;spec&apos;);
+
+        // Glob all test files and run tests in callback
+        glob(&apos;./test/*&apos;, function(e, files) {
+
+            mocha.files = files;
+            tests = mocha.run();
+        });
+    }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Happy testing!
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Updating PHP on Mac OS X</title>
+      <link>http://rayviljoen.github.com/articles/upgrading-mac-php/</link>
+      <pubDate>Sun, 08 Jan 2012 12:00:00 +0000</pubDate>
+      <guid isPermaLink="true">http://rayviljoen.github.com/articles/upgrading-mac-php/</guid>
+      <description>&lt;p&gt;PHP 5.4 has been the first really significant update for a while and brings with it some really nice &lt;a href=&quot;http://php.net/manual/en/migration54.new-features.php&quot;&gt;new features&lt;/a&gt; such as traits, file upload progress, much nicer array syntax and my personal favourite, a built in web server. Unfortunately OS X still ships with version 5.3 and can be a bit of a challenge to upgrade, so here&apos;s a quick step by step guide to getting PHP on Mac OS X &lt;em&gt;- 10.7 Mountain Lion at the time of writing -&lt;/em&gt; upgraded to the latest version.
+
+&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;/p&gt;
+&lt;p&gt;In order to build and install PHP form source you will need to install a few tools and dependancies, so first head over to the App Store and install the latest version of Xcode. Once Xcode is installed, open it&apos;s preferences and navigate to the downloads section to install the Command Line Tools.
+
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://rayviljoen.github.com/articles/upgrading-mac-php/xcode.png&quot; alt=&quot;image&quot;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Next you&apos;ll need to install &lt;a href=&quot;http://xquartz.macosforge.org/&quot;&gt;XQuartz&lt;/a&gt; by downloading the latest DMG from their site. Note that XQuratz is only needed for OS X 10.7 Mountain Lion as previous versions of OS X, comes with XQuartz pre-installed.
+
+&lt;/p&gt;
+&lt;p&gt;Finally install the &lt;a href=&quot;http://mxcl.github.com/homebrew/&quot;&gt;Homebrew&lt;/a&gt; package manager by running the following line in your the terminal:
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    ruby -e &quot;$(curl -fsSkL raw.github.com/mxcl/homebrew/go)&quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Homebrew will be used to install the remaining dependancies, libjpeg, pcre, libxml2 and mcrypt.
+
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;At this point, if you wish, you can simply download and run the &lt;a href=&quot;https://github.com/RayViljoen/Mac-PHP-Update&quot;&gt;installation script I prepared on GitHub&lt;/a&gt;, which will take care of the remainder of the installation, including downloading the source files.&lt;/strong&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Alternatively, to continue running the installation steps manually, install the dependancies via Homebrew by running:
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    brew install libjpeg pcre libxml2 mcrypt
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Whilst Homebrew is installing these packages head over the the &lt;a href=&quot;http://php.net/downloads.php&quot;&gt;PHP downloads section&lt;/a&gt; and grab a copy of the latest version of the PHP source in .tar.gz format.
+
+&lt;/p&gt;
+&lt;p&gt;Extract the .tar.gz file to any temporary location, Downloads or Desktop will do, using a Mac extraction tool or simply run:
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    tar -zxvf path/to/source.tar.gz
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once Homebrew has finished installing all the packages without any errors and the source code has been extracted, change into the extracted source code directory by running
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    cd path/to/source
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and configure the installation by running: &lt;em&gt;(probably best to copy this straight to your terminal)&lt;/em&gt;
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    ./configure  \
+    --prefix=/usr  \
+    --mandir=/usr/share/man  \
+    --infodir=/usr/share/info  \
+    --sysconfdir=/private/etc  \
+    --with-apxs2=/usr/sbin/apxs  \
+    --enable-cli  \
+    --with-config-file-path=/etc  \
+    --with-libxml-dir=/usr  \
+    --with-openssl=/usr  \
+    --with-kerberos=/usr  \
+    --with-zlib=/usr  \
+    --enable-bcmath  \
+    --with-bz2=/usr  \
+    --enable-calendar  \
+    --with-curl=/usr  \
+    --enable-dba  \
+    --enable-exif  \
+    --enable-ftp  \
+    --with-gd  \
+    --enable-gd-native-ttf  \
+    --with-icu-dir=/usr  \
+    --with-iodbc=/usr  \
+    --with-ldap=/usr  \
+    --with-ldap-sasl=/usr  \
+    --with-libedit=/usr  \
+    --enable-mbstring  \
+    --enable-mbregex  \
+    --with-mysql=mysqlnd  \
+    --with-mysqli=mysqlnd  \
+    --without-pear  \
+    --with-pdo-mysql=mysqlnd  \
+    --with-mysql-sock=/var/mysql/mysql.sock  \
+    --with-readline=/usr  \
+    --enable-shmop  \
+    --with-snmp=/usr  \
+    --enable-soap  \
+    --enable-sockets  \
+    --enable-sysvmsg  \
+    --enable-sysvsem  \
+    --enable-sysvshm  \
+    --with-tidy  \
+    --enable-wddx  \
+    --with-xmlrpc  \
+    --with-iconv-dir=/usr  \
+    --with-xsl=/usr  \
+    --enable-zip  \
+    --with-pcre-regex  \
+    --with-pgsql=/usr  \
+    --with-pdo-pgsql=/usr \
+    --with-freetype-dir=/usr/X11 \
+    --with-jpeg-dir=/usr  \
+    --with-png-dir=/usr/X11
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will take a few minutes to complete and once it does you can finally build and install the source files. Note that this can take quite a long time to complete, so make sure you have an hour just to be safe. To build and install run:
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    sudo make install
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the install is complete run
+
+&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-clike&quot;&gt;
+
+    php -v
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and if everything worked, you should now see the new PHP version 5.4.    
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
