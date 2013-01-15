@@ -121,7 +121,7 @@ Using a &lt;a href=&quot;https://npmjs.org/package/glob&quot;&gt;glob helper&lt;
       <link>http://rayviljoen.github.com/articles/upgrading-mac-php/</link>
       <pubDate>Sun, 08 Jan 2012 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">http://rayviljoen.github.com/articles/upgrading-mac-php/</guid>
-      <description>&lt;p&gt;PHP 5.4 has been the first really significant update for a while and brings with it some really nice &lt;a href=&quot;http://php.net/manual/en/migration54.new-features.php&quot;&gt;new features&lt;/a&gt; such as traits, file upload progress, much nicer array syntax and my personal favourite, a built in web server. Unfortunately OS X still ships with version 5.3 and can be a bit of a challenge to upgrade, so here&apos;s a quick step by step guide to getting PHP on Mac OS X &lt;em&gt;- 10.7 Mountain Lion at the time of writing -&lt;/em&gt; upgraded to the latest version.
+      <description>&lt;p&gt;PHP 5.4 has been the first significant update for a while and brings with it some really nice &lt;a href=&quot;http://php.net/manual/en/migration54.new-features.php&quot;&gt;new features&lt;/a&gt; such as traits, file upload progress, much nicer array syntax and my personal favourite, a built in web server. Unfortunately OS X still ships with version 5.3 and can be a bit of a challenge to upgrade, so here&apos;s a quick step by step guide to getting PHP on Mac OS X &lt;em&gt;- 10.7 Mountain Lion at the time of writing -&lt;/em&gt; upgraded to the latest version.
 
 &lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
