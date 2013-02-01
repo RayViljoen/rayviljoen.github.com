@@ -130,7 +130,7 @@ Using a &lt;a href=&quot;https://npmjs.org/package/glob&quot;&gt;glob helper&lt;
 &lt;p&gt;In order to build and install PHP form source you will need to install a few tools and dependancies, so first head over to the App Store and install the latest version of Xcode. Once Xcode is installed, open it&apos;s preferences and navigate to the downloads section to install the Command Line Tools.
 
 &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/upgrading-mac-php/xcode.png&quot; alt=&quot;image&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;http://rayviljoen.github.com/articles/upgrading-mac-php/xcode.png&quot; alt=&quot;image&quot;&gt;
 
 &lt;/p&gt;
 &lt;p&gt;Next you&apos;ll need to install &lt;a href=&quot;http://xquartz.macosforge.org/&quot;&gt;XQuartz&lt;/a&gt; by downloading the latest DMG from their site. Note that XQuratz is only needed for OS X 10.7 Mountain Lion as previous versions of OS X, comes with XQuartz pre-installed.
