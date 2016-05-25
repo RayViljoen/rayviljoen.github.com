@@ -1,0 +1,197 @@
+
+// Third-party libraries
+@import 'normalize';
+
+.bold {
+    font-weight: bold;
+}
+
+.radius {
+  border-radius: 3px;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.sans-cond {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 100;
+  &.bold {
+      font-weight: bold;
+  }
+}
+
+.sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.times {
+  font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+  font-weight: 300;
+}
+
+.helvetica {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #222;
+}
+
+body {
+  background: url(/img/orion.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  @extend .helvetica;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  @extend .sans;
+  color: #222;
+  margin: 0;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: #485FC7;;
+  position: fixed;
+  opacity: 0.9;
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  a {
+    @extend .sans;
+    color: white;
+    padding: 10px 60px 10px 0;
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 100;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  @extend .clearfix;
+  padding: 50px 0;
+
+  &.header {
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+
+    #cover {
+      float: right;
+      width: 30%;
+      border: 1px solid white;
+      margin-top: 45px;
+      box-shadow: 0px 0px 50px #000;
+    }
+
+    .left-txt {
+      padding: 0 40px 20px;
+      @extend .radius;
+      float: left;
+      width: 60%;
+      h1 {
+        font-size: 135px;
+        margin: 0;
+        color: white;
+      }
+      .subtitle {
+        margin: 0 0 20px;
+        color: #485FC7;
+        font-size: 34px;
+      }
+      .author {
+        font-size: 24px;
+      }
+      .description {
+        display: block;
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 100;
+        clear: both;
+      }
+      .button img {
+        width: 200px;
+      }
+    }
+  }
+
+  .content {
+    width:100%;
+    max-width: 1200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &.bio {
+    background-color: #DEDEDE;
+
+    .left {
+      float: left;
+      width: 60%;
+      h2 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 18px;
+        padding-right: 30px;
+      }
+    }
+    img {
+      width: 40%;
+      @extend .radius;
+      float: right;
+    }
+  }
+
+  &.donations {
+
+    background-color: #fff;
+
+    h2 {
+      font-size: 40px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .small {
+      text-align: center;
+      margin: 0;
+      padding: 15px 0 100px;
+    }
+
+    .block {
+      margin: 0;
+      width: 50%;
+      display: inline-block;
+      text-align: center;
+      padding: 0;
+
+      &.right {
+        float: right;
+      }
+      &.left {
+        float: left;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 100;
+      }
+
+      .screen {
+        display: block;
+        width: 95%;
+        margin-top: 15px;
+        @extend .radius;
+      }
+    }
+  }
+
+}
